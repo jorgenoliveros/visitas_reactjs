@@ -45,9 +45,7 @@ const Formulario = () => {
 
     return ( 
         <Fragment>
-            <h2><i className='bx bxs-user-plus' ></i>   Agendar Visita</h2>
-
-            {error ? <p className="alerta-error"><i className="bx bx-error"></i> Todos los campos son obligatorios</p> : null}
+            <h2>Agendar Visita</h2>
 
             <form
                 onSubmit={submitVisita}
@@ -133,7 +131,6 @@ const Formulario = () => {
                     type="submit"
                     className="button registrar u-full-width"
                 >Registrar</button>
-
 
             </form>
         </Fragment>

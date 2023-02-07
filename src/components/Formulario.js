@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 const Formulario = () => {
 
@@ -41,7 +42,11 @@ const Formulario = () => {
             return;
         }
 
+        //Eliminar el mensaje previo
+        actualizarError(false);
+
         // Asignar un ID
+        visita.id = uuidv4();
 
         // Crear la visita
 
@@ -67,8 +72,8 @@ const Formulario = () => {
                     placeholder="Cedula Visitante (Solo numeros)"
                     onChange={actualizarState}
                     value={cedula}
-                    minlength="6" 
-                    maxlength="12"
+                    minLength="6" 
+                    maxLength="12"
                     required pattern="[Kk?0-9\-]+"
                 /> 
                 <label>Nombre visitante</label>
@@ -79,8 +84,8 @@ const Formulario = () => {
                     placeholder="Nombre Visitante"
                     onChange={actualizarState}
                     value={nombre}
-                    minlength="4" 
-                    maxlength="40"
+                    minLength="4" 
+                    maxLength="40"
                     required pattern="[A-Za-z ?ñ?]+"
                 /> 
                 <label>Propietario</label>
@@ -91,8 +96,8 @@ const Formulario = () => {
                     placeholder="Nombre Propietario"
                     onChange={actualizarState}
                     value={propietario}
-                    minlength="4" 
-                    maxlength="40"
+                    minLength="4" 
+                    maxLength="40"
                     required pattern="[A-Za-z ?ñ?]+"
                 />
                 <label>Departamento</label>
@@ -103,8 +108,8 @@ const Formulario = () => {
                     placeholder="Departamento"
                     onChange={actualizarState}
                     value={depto}
-                    minlength="2" 
-                    maxlength="5"
+                    minLength="2" 
+                    maxLength="5"
                     required pattern="[A-Za-z?0-9\-]+"
                 />   
                  <label>Fecha</label>
@@ -132,7 +137,7 @@ const Formulario = () => {
                     onChange={actualizarState}
                     value={observaciones}
                     placeholder="Observaciones (Max 200 caracteres)"
-                    maxlength="200"
+                    maxLength="200"
                     required pattern="[A-Za-z0-9\/?]+"
                 >
                 </textarea>

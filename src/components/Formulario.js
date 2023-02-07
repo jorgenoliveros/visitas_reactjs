@@ -14,6 +14,8 @@ const Formulario = () => {
         observaciones: ''
     });
 
+    const [ error, actualizarError ] = useState(false)
+
     
     // Funcion que se ejecuta cada que el usuario escribe en un input
     
@@ -34,6 +36,11 @@ const Formulario = () => {
 
         // Validar
 
+        if (cedula.trim() === '' || nombre.trim() === '' || propietario.trim() === '' || depto.trim() === '' || fecha.trim() === '' || hora.trim() === '' || observaciones.trim() === '' ){
+            actualizarError(true);
+            return;
+        }
+
         // Asignar un ID
 
         // Crear la visita
@@ -45,7 +52,9 @@ const Formulario = () => {
 
     return ( 
         <Fragment>
-            <h2>Agendar Visita</h2>
+            <h2><i className='bx bxs-user-plus' ></i>   Agendar Visita</h2>
+
+            {error ? <p className="alerta-error"><i className="bx bx-error"></i> Todos los campos son obligatorios</p> : null}
 
             <form
                 onSubmit={submitVisita}

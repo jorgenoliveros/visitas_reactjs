@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-const Formulario = () => {
+const Formulario = ({registrarVisita}) => {
 
     // Crear state de visitas 
 
@@ -48,9 +48,19 @@ const Formulario = () => {
         // Asignar un ID
         visita.id = uuidv4();
 
-        // Crear la visita
+        // Registrar la visita
+        registrarVisita(visita);
 
         // Reiniciar el Form
+        actualizarVisita({
+            cedula: '',
+            nombre: '',
+            propietario: '',
+            depto: '',
+            fecha: '',
+            hora: '',
+            observaciones: ''
+        })
 
     }
 

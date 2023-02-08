@@ -1,7 +1,19 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import Formulario from './components/Formulario';
 
 function App() {
+
+  //Arreglo de visitas
+  const [visitas, guardarVisitas ] = useState ([]);
+
+  // Funcion que tome las visitas actuales y agregue la nueva
+  const registrarVisita = visita => {
+    guardarVisitas([
+      ...visitas,
+      visita
+    ]);
+  }
+
   return (
     <Fragment>
       <div className="titulo">
@@ -14,7 +26,9 @@ function App() {
       <div className="container">
         <div className="Row">
           <div className="one-half column contenedor">
-            <Formulario />
+            <Formulario 
+              registrarVisita={registrarVisita}
+            />
           </div>
           <div className="one-half column contenedor">
             <h2><i className='bx bxs-user-detail' ></i>  Visitantes</h2>  

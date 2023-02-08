@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
 import Formulario from './components/Formulario';
+import Visita from './components/Visita';
 
 function App() {
 
@@ -31,7 +32,14 @@ function App() {
             />
           </div>
           <div className="one-half column contenedor">
-            <h2><i className='bx bxs-user-detail' ></i>  Visitantes</h2>  
+            <h2><i className='bx bxs-user-detail' ></i>  Visitantes</h2>
+            {visitas.map(visita => (
+              <Visita 
+                key={visita.id}
+                visita={visita}
+                eliminarVisita={eliminarVisita}
+              />
+            ))}  
           </div>
         </div>
       </div>

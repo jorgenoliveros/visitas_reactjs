@@ -37,7 +37,6 @@ function App() {
               <Visita 
                 key={visita.id}
                 visita={visita}
-                eliminarVisita={eliminarVisita}
               />
             ))}  
           </div>

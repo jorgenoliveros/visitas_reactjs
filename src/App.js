@@ -15,6 +15,12 @@ function App() {
     ]);
   }
 
+  // Funcion que elimina una visita por su ID
+  const eliminarVisita = id => {
+    const nuevasVisitas = visitas.filter( visita => visita.id !== id );
+    guardarVisitas(nuevasVisitas);
+  }
+
   return (
     <Fragment>
       <div className="titulo">
@@ -37,6 +43,7 @@ function App() {
               <Visita 
                 key={visita.id}
                 visita={visita}
+                eliminarVisita={eliminarVisita}
               />
             ))}  
           </div>

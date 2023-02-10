@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import Formulario from './components/Formulario';
 import Visita from './components/Visita';
 
@@ -6,6 +6,11 @@ function App() {
 
   //Arreglo de visitas
   const [visitas, guardarVisitas ] = useState ([]);
+
+  // Use Effect para realizar ciertas operaciones cuando es state cambia
+  useEffect( () => {
+    console.log('ok');
+  }, [] );
 
   // Funcion que tome las visitas actuales y agregue la nueva
   const registrarVisita = visita => {

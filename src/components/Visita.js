@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Visita  = ({visita, eliminarVisita}) => (  
     <div className="visita">
@@ -16,5 +17,10 @@ const Visita  = ({visita, eliminarVisita}) => (
         >Eliminar <i className='bx bx-trash' ></i></button>
     </div>
 );
+
+Visita.propTypes = {
+    visita: PropTypes.object.isRequired,
+    eliminarVisita: PropTypes.func.isRequired
+}
 
 export default Visita;

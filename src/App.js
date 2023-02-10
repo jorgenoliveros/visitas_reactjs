@@ -4,13 +4,25 @@ import Visita from './components/Visita';
 
 function App() {
 
+  // visitas en local storage
+  let visitasIniciales = JSON.parse(localStorage.getItem('visitas'));
+  if(!visitasIniciales){
+    visitasIniciales = [];
+  }
+
   //Arreglo de visitas
   const [visitas, guardarVisitas ] = useState ([]);
 
   // Use Effect para realizar ciertas operaciones cuando es state cambia
   useEffect( () => {
-    console.log('ok');
-  }, [] );
+    let visitasIniciales = JSON.parse(localStorage.getItem('visitas'));
+
+    if(visitasIniciales) {
+      localStorage.setItem('visitas', JSON.stringify(visitas));
+    } else {
+      localStorage.setItem('visitas', JSON.stringify([]));
+    }
+  }, [visitas] );
 
   // Funcion que tome las visitas actuales y agregue la nueva
   const registrarVisita = visita => {

@@ -21,6 +21,9 @@ function App() {
     guardarVisitas(nuevasVisitas);
   }
 
+  // Mensaje condicional
+  const titulo = visitas.length === 0 ? 'No hay visitas' : 'Visitantes' ;
+
   return (
     <Fragment>
       <div className="titulo">
@@ -38,7 +41,7 @@ function App() {
             />
           </div>
           <div className="one-half column contenedor">
-            <h2><i className='bx bxs-user-detail' ></i>  Visitantes</h2>
+            <h2><i className='bx bxs-user-detail' ></i>  {titulo}</h2>
             {visitas.map(visita => (
               <Visita 
                 key={visita.id}

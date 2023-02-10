@@ -13,7 +13,7 @@ const Visita  = ({visita, eliminarVisita}) => (
         <button
             className="button eliminar u-full-width"
             onClick={ () => eliminarVisita(visita.id)  }
-        >Eliminar <i class='bx bx-trash' ></i></button>
+        >Eliminar <i className='bx bx-trash' ></i></button>
     </div>
 );
 

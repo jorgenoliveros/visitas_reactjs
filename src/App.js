@@ -11,7 +11,7 @@ function App() {
   }
 
   //Arreglo de visitas
-  const [visitas, guardarVisitas ] = useState ([]);
+  const [visitas, guardarVisitas ] = useState(visitasIniciales);
 
   // Use Effect para realizar ciertas operaciones cuando es state cambia
   useEffect( () => {

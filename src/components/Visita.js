@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Visita  = ({visita, eliminarVisita}) => (  
     <div className="visita">
-        <p>Cedula: <span></span></p>
+        <p>Cedula: <span>{visita.cedula}</span></p>
         <p>Visitante: <span>{visita.nombre}</span></p>
         <p>Propietario: <span>{visita.propietario}</span></p>
         <p>Departamento: <span>{visita.depto}</span></p>
